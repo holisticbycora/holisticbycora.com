@@ -5,17 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Holistic by Cora</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f7f3ee;
-    color: #2c2c2c;
+    font-family: 'Inter', sans-serif;
+    background: #f6f1eb;
+    color: #2b2b2b;
 }
 
-header {
+.hero {
     height: 100vh;
-    background: url('https://images.unsplash.com/photo-1527515637462-cff94eecc1ac') center/cover;
+    background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url('https://images.unsplash.com/photo-1506126613408-eca07ce68773') center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,84 +27,91 @@ header {
     color: white;
 }
 
-header h1 {
-    font-size: 48px;
-    letter-spacing: 2px;
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    margin: 0;
 }
 
-header p {
+.hero p {
     font-size: 18px;
     margin-top: 10px;
+    opacity: 0.9;
+}
+
+.button {
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: #c2a68c;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 14px;
 }
 
 section {
-    padding: 60px 20px;
+    padding: 80px 20px;
     max-width: 900px;
     margin: auto;
 }
 
 h2 {
-    color: #3a3a3a;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
 }
 
-.button {
-    display: inline-block;
+.card {
+    background: white;
+    padding: 24px;
     margin-top: 20px;
-    padding: 12px 24px;
-    background: #b8a89a;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 footer {
     text-align: center;
     padding: 40px;
-    font-size: 14px;
-    background: #eee;
+    font-size: 12px;
+    color: #777;
 }
 </style>
-
 </head>
 
 <body>
 
-<header>
+<div class="hero">
     <h1>Holistic by Cora</h1>
     <p>Healing Through Sound · Scent · Presence</p>
     <a class="button" href="#contact">Book a Session</a>
-</header>
+</div>
 
 <section>
     <h2>About Cora</h2>
-    <p>
-    I am dedicated to creating a sanctuary for healing and self-discovery.
-    Through singing bowls, aromatherapy, meditation, and intuitive guidance,
-    I support you in returning to inner balance and clarity.
-    </p>
+    <div class="card">
+        I create a sanctuary for healing and inner alignment through sound therapy,
+        aromatherapy, meditation, and intuitive guidance.
+    </div>
 </section>
 
 <section>
     <h2>Services</h2>
-    <p>
-    • Singing Bowl Healing<br>
-    • Aromatherapy Sessions<br>
-    • Rune Reading<br>
-    • Guided Meditation<br>
-    • Soul Partnership Blueprint
-    </p>
+
+    <div class="card">Singing Bowl Healing</div>
+    <div class="card">Aromatherapy Sessions</div>
+    <div class="card">Rune Reading</div>
+    <div class="card">Guided Meditation</div>
+    <div class="card">Soul Blueprint Session</div>
 </section>
 
 <section id="contact">
     <h2>Contact</h2>
-    <p>Email: info@holisticbycora.com</p>
-    <a class="button" href="https://forms.gle/" target="_blank">
-        Book via Google Form
-    </a>
+    <div class="card">
+        info@holisticbycora.com
+    </div>
 </section>
 
 <footer>
-    © 2026 Holistic by Cora · All Rights Reserved
+    © Holistic by Cora · Mind · Body · Spirit
 </footer>
 
 </body>
