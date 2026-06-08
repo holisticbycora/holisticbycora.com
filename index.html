@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holistic by Cora｜北歐盧恩・身心靈療癒</title>
+  <meta name="description" content="For the woman who runs the boardroom by day and follows the moon by night. 北歐盧恩占卜、頌缽療癒、靈氣、芳療，由 Cora 帶領你走向內在智慧。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+/* ============================================
+   Holistic by Cora — Main Stylesheet
+   Aesthetic: Morandi nude warmth with golden light
+   Palette: Warm parchment · dusty rose · antique gold
+   ============================================ */
+
+:root {
+  --color-bg:        #F5EDE3;
+  --color-bg-2:      #EDE0D2;
+  --color-bg-3:      #E6D5C3;
+  --color-surface:   #EAD9C8;
+  --color-surface-2: #DFC9B2;
+
+  --color-gold:       #B8914A;
+  --color-gold-light: #D4A85A;
+  --color-gold-dim:   #C4A06A;
+  --color-gold-glow:  rgba(184, 145, 74, 0.18);
+
+  --color-rose:      #C4937A;
+  --color-sage:      #8A9E82;
+  --color-dust:      #B0A898;
+
+  --color-text-primary:   #3C2F22;
+  --color-text-secondary: #6B5644;
+  --color-text-muted:     #9C8878;
+
+  --color-border:        rgba(184, 145, 74, 0.18);
+  --color-border-strong: rgba(184, 145, 74, 0.38);
+
+  --font-display:  'Helvetica Neue', Arial, 'Noto Sans TC', sans-serif;
+  --font-body:     'Helvetica Neue', Arial, 'Noto Sans TC', sans-serif;
+  --font-serif-tc: 'Noto Sans TC', sans-serif;
+
+  --max-width: 1200px;
+  --nav-height: 72px;
+
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+strong { font-weight: 500; }
+em { font-style: italic; color: var(--color-gold); }
+
+/* ---- Typography ---- */
+h1, h2, h3, h4 {
+  font-family: 'Helvetica Neue', Arial, 'Noto Sans TC', sans-serif;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+/* ---- Utility ---- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.section { padding: 6rem 0; }
+
+.section__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+}
+.section__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-text-primary);
+  margin-bottom: 1.5rem;
+}
+.section__desc {
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  font-size: 1.05rem;
+}
+.section__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.section__header .section__desc {
+  margin: 0 auto;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2.2rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all 0.3s var(--ease-out);
+  cursor: pointer;
+  border: none;
+}
+.btn--primary {
+  background: var(--color-gold);
+  color: #F5EDE3;
+}
+.btn--primary:hover {
+  background: var(--color-gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(184,145,74,0.25);
+}
+.btn--ghost {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-strong);
+}
+.btn--ghost:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  transform: translateY(-2px);
+}
+.btn--outline {
+  background: transparent;
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold-dim);
+}
+.btn--outline:hover {
+  background: var(--color-gold-glow);
+  border-color: var(--color-gold);
+}
+
+/* ============================================
+   NAV
+   ============================================ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  background: rgba(245, 237, 227, 0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.4s;
+}
+.nav__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__logo {
+  font-family: 'Helvetica Neue', Arial, 'Noto Sans TC', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--color-gold);
+}
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.nav__links a {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  transition: color 0.2s;
+}
+.nav__links a:hover { color: var(--color-text-primary); }
+.nav__cta {
+  color: var(--color-gold) !important;
+  border: 1px solid var(--color-border-strong);
+  padding: 0.5rem 1.2rem;
+  transition: all 0.3s !important;
+}
+.nav__cta:hover {
+  background: var(--color-gold-glow);
+  border-color: var(--color-gold) !important;
+}
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav__toggle span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--color-text-primary);
+  transition: all 0.3s;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding-top: var(--nav-height);
+  background: linear-gradient(
+    160deg,
+    #F5EDE3 0%,
+    #EDD9C4 28%,
+    #E8CEB0 52%,
+    #EDD9C4 74%,
+    #F2E8DA 100%
+  );
+}
+/* Subtle gold shimmer overlay */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(212,168,90,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 75% 65%, rgba(196,147,122,0.10) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero__bg {
+  position: absolute;
+  inset: 0;
+}
+.hero__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.35;
+  animation: drift 14s ease-in-out infinite alternate;
+}
+.hero__orb--1 {
+  width: 520px; height: 520px;
+  background: radial-gradient(circle, #D4A85A, transparent 70%);
+  top: 5%; left: -12%;
+  animation-delay: 0s;
+}
+.hero__orb--2 {
+  width: 380px; height: 380px;
+  background: radial-gradient(circle, #C4937A, transparent 70%);
+  bottom: 8%; right: -8%;
+  animation-delay: -5s;
+  opacity: 0.22;
+}
+.hero__orb--3 {
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, #B8914A, transparent 70%);
+  top: 55%; left: 52%;
+  transform: translate(-50%, -50%);
+  animation-delay: -9s;
+  opacity: 0.18;
+}
+@keyframes drift {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(28px, -18px) scale(1.08); }
+}
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  padding: 2rem;
+}
+.hero__eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+.hero__title {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  color: var(--color-text-primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  animation: fadeUp 1s var(--ease-out) both;
+}
+.hero__title em {
+  display: block;
+  color: var(--color-gold);
+}
+.hero__subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.08em;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 1s 0.15s var(--ease-out) both;
+}
+.br-desktop { display: block; }
+.hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  animation: fadeUp 1s 0.3s var(--ease-out) both;
+}
+.hero__tags span {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text-secondary);
+  background: rgba(245,237,227,0.6);
+}
+.hero__ctas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeUp 1s 0.45s var(--ease-out) both;
+}
+.hero__rune {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Helvetica Neue', Arial, 'Noto Sans TC', sans-serif;
+  font-size: clamp(8rem, 15vw, 18rem);
+  color: rgba(184, 145, 74, 0.07);
+  user-select: none;
+  z-index: 1;
+  line-height: 1;
+}
+.scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 2;
+}
+.scroll-hint span {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.scroll-hint__line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, var(--color-gold-dim), transparent);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine {
+  0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
+  50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   QUOTE BANNER
+   ============================================ */
+.quote-banner {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.quote-banner blockquote {
+  font-family: 'Helvetica Neue', Arial, 'Noto Sans TC', sans-serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-gold);
+  max-width: 700px;
+  margin: 0 auto;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+}
+
+/* ============================================
+   ABOUT
+   ============================================ */
+.about { background: var(--color-bg); }
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 6rem;
+  align-items: center;
+}
+.about__frame { position: relative; }
+.about__img-placeholder {
+  aspect-ratio: 3/4;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.rune-large {
+  font-family: 'Helvetica Neue', Arial, 'Noto Sans TC', sans-serif;
+  font-size: 8rem;
+  color: var(--color-gold-dim);
+  opacity: 0.35;
+}
+.about__badge {
+  position: absolute;
+  bottom: -2rem;
+  right: -2rem;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.about__badge span {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+}
+.about__text-col p {
+  color: var(--color-text-secondary);
+  margin-bottom: 1.2rem;
+  font-size: 1.02rem;
+}
+.about__text-col .btn { margin-top: 1rem; }
+
+/* ============================================
+   SERVICES
+   ============================================ */
+.services {
+  background: var(--color-bg-2);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+}
+.service-card {
+  background: var(--color-bg-2);
+  padding: 2.5rem;
+  transition: background 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.service-card:hover { background: var(--color-surface); }
+.service-card--featured { background: var(--color-surface); }
+.service-card--featured::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+.service-card__rune {
+  font-family: 'Helvetica Neue', Arial, 'Noto Sans TC', sans-serif;
+  font-size: 2.5rem;
+  color: var(--color-gold-dim);
+  margin-bottom: 1rem;
+  display: block;
+  transition: color 0.3s;
+}
+.service-card:hover .service-card__rune { color: var(--color-gold); }
+.service-card h3 {
+  font-size: 1.3rem;
+  color: var(--color-text-primary);
+  margin-bottom: 0.8rem;
+}
+.service-card > p {
+  color: var(--color-text-secondary);
+  font-size: 0.92rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+}
+.service-card ul { margin-bottom: 1.5rem; }
+.service-card ul li {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  padding: 0.3rem 0;
+  padding-left: 1rem;
+  border-left: 1px solid var(--color-border-strong);
+  margin-bottom: 0.3rem;
+}
+.service-card__link {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  transition: letter-spacing 0.3s;
+}
+.service-card__link:hover { letter-spacing: 0.2em; }
+
+/* ============================================
+   RUNES FEATURE
+   ============================================ */
+.runes-feature {
+  background: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+}
+.runes-feature::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,145,74,0.07) 0%, transparent 70%);
+}
+.runes-feature__inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+.runes-feature__text p {
+  color: var(--color-text-secondary);
+  margin-bottom: 1.2rem;
+  font-size: 1.02rem;
+}
+.runes-feature__text .btn { margin-top: 1rem; }
+.rune-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--color-border);
+}
+.rune-grid span {
+  font-family: 'Helvetica Neue', Arial, 'Noto Sans TC', sans-serif;
+  font-size: 2rem;
+  color: var(--color-gold-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border: 1px solid var(--color-border);
+  cursor: default;
+  transition: all 0.3s;
+}
+.rune-grid span:hover {
+  background: var(--color-surface);
+  color: var(--color-gold);
+  transform: scale(1.1);
+  z-index: 1;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(184,145,74,0.15);
+}
+
+/* ============================================
+   TESTIMONIALS
+   ============================================ */
+.testimonials { background: var(--color-bg-2); }
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.testimonial-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 2rem;
+  position: relative;
+}
+.testimonial-card::before {
+  content: '"';
+  font-family: 'Helvetica Neue', Arial, 'Noto Sans TC', sans-serif;
+  font-size: 5rem;
+  color: var(--color-gold-dim);
+  opacity: 0.4;
+  position: absolute;
+  top: 0.5rem; left: 1.5rem;
+  line-height: 1;
+}
+.testimonial-card__quote {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  font-style: italic;
+}
+.testimonial-card__author {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.testimonial-card__avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+.testimonial-card__author strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--color-text-primary);
+  font-weight: 400;
+}
+.testimonial-card__author span {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+/* ============================================
+   BOOKING CTA
+   ============================================ */
+.booking {
+  background: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.booking__bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  pointer-events: none;
+}
+.booking__bg span {
+  font-family: 'Helvetica Neue', Arial, 'Noto Sans TC', sans-serif;
+  font-size: clamp(4rem, 12vw, 14rem);
+  color: rgba(184, 145, 74, 0.05);
+  user-select: none;
+}
+.booking__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.booking__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+}
+.booking__subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 3rem;
+}
+.booking__options {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.booking__option {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 200px;
+  transition: all 0.3s var(--ease-out);
+}
+.booking__option:hover {
+  border-color: var(--color-gold-dim);
+  background: var(--color-surface-2);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(184,145,74,0.12);
+}
+.booking__option-rune {
+  font-family: 'Helvetica Neue', Arial, 'Noto Sans TC', sans-serif;
+  font-size: 2.5rem;
+  color: var(--color-gold);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.booking__option strong {
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-primary);
+}
+.booking__option span {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+.booking__note {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: var(--color-bg-2);
+  border-top: 1px solid var(--color-border);
+  padding: 4rem 0 2rem;
+}
+.footer__inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 2rem;
+}
+.footer__logo {
+  font-family: 'Helvetica Neue', Arial, 'Noto Sans TC', sans-serif;
+  font-size: 1.3rem;
+  color: var(--color-gold);
+  margin-bottom: 0.8rem;
+}
+.footer__brand p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+.footer__runes {
+  margin-top: 1.5rem;
+  font-family: 'Helvetica Neue', Arial, 'Noto Sans TC', sans-serif;
+  font-size: 1.2rem;
+  color: var(--color-gold-dim);
+  letter-spacing: 0.3em;
+}
+.footer__links h4, .footer__social h4 {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 1.2rem;
+  font-weight: 400;
+  font-family: var(--font-body);
+}
+.footer__links ul li { margin-bottom: 0.6rem; }
+.footer__links ul li a {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  transition: color 0.2s;
+}
+.footer__links ul li a:hover { color: var(--color-gold); }
+.footer__social a {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.8rem;
+  transition: color 0.2s;
+}
+.footer__social a:hover { color: var(--color-gold); }
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer__bottom p {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+.footer__rune-row {
+  letter-spacing: 0.15em;
+  font-family: 'Helvetica Neue', Arial, 'Noto Sans TC', sans-serif;
+  font-size: 0.9rem;
+  color: var(--color-gold-dim);
+  opacity: 0.5;
+}
+
+/* ============================================
+   SCROLL ANIMATIONS
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  .nav__links {
+    display: none;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0; right: 0;
+    background: rgba(245, 237, 227, 0.97);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .nav__links.open { display: flex; }
+  .nav__toggle { display: flex; }
+
+  .about__grid { grid-template-columns: 1fr; gap: 3rem; }
+  .about__badge { position: static; margin-top: 1rem; }
+  .about__img-placeholder { aspect-ratio: 1; }
+
+  .services__grid { grid-template-columns: 1fr 1fr; }
+
+  .runes-feature__inner { grid-template-columns: 1fr; gap: 3rem; }
+  .runes-feature__symbols { order: -1; }
+  .rune-grid span { font-size: 1.5rem; }
+
+  .testimonials__grid { grid-template-columns: 1fr; }
+
+  .footer__inner { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .section { padding: 4rem 0; }
+  .services__grid { grid-template-columns: 1fr; }
+  .hero__title { font-size: 2.5rem; }
+  .br-desktop { display: none; }
+  .footer__inner { grid-template-columns: 1fr; }
+  .footer__bottom { flex-direction: column; text-align: center; }
+  .booking__options { flex-direction: column; align-items: center; }
+  .booking__option { width: 100%; max-width: 300px; }
+  .hero__ctas { flex-direction: column; align-items: center; }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">Holistic by Cora</a>
+      <button class="nav__toggle" id="navToggle" aria-label="開啟選單">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#about">關於 Cora</a></li>
+        <li><a href="#services">服務項目</a></li>
+        <li><a href="#runes">盧恩占卜</a></li>
+        <li><a href="#testimonials">見證分享</a></li>
+        <li><a href="#booking" class="nav__cta">預約體驗</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero__bg">
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+      <div class="hero__orb hero__orb--3"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Holistic by Cora</p>
+      <h1 class="hero__title">
+        往內走<br />
+        <em>是最遠的旅程</em>
+      </h1>
+      <p class="hero__subtitle">
+        The deepest journey is inward.
+      </p>
+      <div class="hero__tags">
+        <span>北歐盧恩</span>
+        <span>頌缽療癒</span>
+        <span>靈氣 Reiki</span>
+        <span>芳香療法</span>
+        <span>塔羅</span>
+        <span>呼吸工作</span>
+      </div>
+      <div class="hero__ctas">
+        <a href="#booking" class="btn btn--primary">預約體驗</a>
+        <a href="#about" class="btn btn--ghost">認識 Cora</a>
+      </div>
+    </div>
+    <div class="hero__rune" aria-hidden="true">ᚨ</div>
+    <div class="scroll-hint">
+      <span>向下探索</span>
+      <div class="scroll-hint__line"></div>
+    </div>
+  </section>
+
+  <!-- Quote Banner -->
+  <section class="quote-banner">
+    <blockquote>
+      「宇宙的智慧早已刻在盧恩之中，等待你來閱讀自己的故事。」
+    </blockquote>
+  </section>
+
+  <!-- About -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__image-col">
+          <div class="about__frame">
+            <div class="about__img-placeholder">
+              <span class="rune-large" aria-hidden="true">ᚹ</span>
+            </div>
+            <div class="about__badge">
+              <span>NAHA 美國芳療認證</span>
+              <span>ICRT Reiki Level II</span>
+              <span>瑞典烏普薩拉朝聖</span>
+              <span>挪威盧恩師承脈絡</span>
+            </div>
+          </div>
+        </div>
+        <div class="about__text-col">
+          <p class="section__eyebrow">關於 Cora</p>
+          <h2 class="section__title">從科技 AI 到月亮圓缺<br />她走過兩個世界</h2>
+          <p>Cora 橫跨世界前五百大科技領域高管、到永續 ESG 職涯，讓她深刻理解現代人類能量的張力——在成就與靈魂之間，如何找到一條回家的路。</p>
+          <p>她曾親赴<strong>瑞典烏普薩拉</strong>朝聖，在古維京人的聖地浸染盧恩能量；更於<strong>挪威師承北歐盧恩傳承脈絡</strong>，這段罕見的學習旅程成為 Holistic by Cora 最核心的品牌基石。</p>
+          <p>持有美國 NAHA 芳療師認證、ICRT William Lee Rand 親授靈氣二階，並深研塔羅與 Elder Futhark 盧恩系統，她以整合的眼光引領自我療癒的旅程。</p>
+          <a href="#services" class="btn btn--outline">探索服務</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services section" id="services">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__eyebrow">服務項目</p>
+        <h2 class="section__title">選擇屬於你的療癒方式</h2>
+        <p class="section__desc">每一種服務都是通往內在智慧的一扇門。你不需要全部嘗試，只需要找到那一扇為你而開的。</p>
+      </div>
+      <div class="services__grid">
+
+        <div class="service-card service-card--featured">
+          <div class="service-card__rune" aria-hidden="true">ᚠ</div>
+          <h3>北歐盧恩占卜</h3>
+          <p>源自古維京智慧的神聖符文，透過問題聚焦、牌陣解讀，揭示當下的能量流向與人生課題。</p>
+          <ul>
+            <li>單張快問快答</li>
+            <li>三符陣：過去・現在・未來</li>
+            <li>人生路口深度解讀</li>
+          </ul>
+          <a href="#booking" class="service-card__link">預約占卜 →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__rune" aria-hidden="true">ᛉ</div>
+          <h3>頌缽音療</h3>
+          <p>藏式頌缽的共鳴頻率直抵細胞深處，讓神經系統從緊繃中釋放，進入深度休息的療癒狀態。</p>
+          <ul>
+            <li>個人 1 對 1 音療</li>
+            <li>小組音浴工作坊</li>
+            <li>線上冥想音療</li>
+          </ul>
+          <a href="#booking" class="service-card__link">預約音療 →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__rune" aria-hidden="true">ᛊ</div>
+          <h3>靈氣 Reiki</h3>
+          <p>ICRT William Lee Rand 認證靈氣第二階，透過能量傳遞協助清理情緒阻塞，恢復身心流動。</p>
+          <ul>
+            <li>遠距靈氣療癒</li>
+            <li>現場能量梳理</li>
+            <li>靈氣 + 盧恩整合</li>
+          </ul>
+          <a href="#booking" class="service-card__link">預約靈氣 →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__rune" aria-hidden="true">ᛈ</div>
+          <h3>芳香療法</h3>
+          <p>美國 NAHA 認證芳療師，以植物精油的分子振動頻率支持情緒平衡與身心整合。</p>
+          <ul>
+            <li>個人配方諮詢</li>
+            <li>睡眠修復芳療</li>
+            <li>情緒釋放油品推薦</li>
+          </ul>
+          <a href="#booking" class="service-card__link">預約芳療 →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__rune" aria-hidden="true">ᚱ</div>
+          <h3>塔羅解讀</h3>
+          <p>以卡巴拉生命之樹為框架的深度塔羅，不只算命，而是幫你看清楚當下真正的選擇。</p>
+          <ul>
+            <li>月度能量牌陣</li>
+            <li>愛情關係深讀</li>
+            <li>事業路口解析</li>
+          </ul>
+          <a href="#booking" class="service-card__link">預約塔羅 →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__rune" aria-hidden="true">ᛏ</div>
+          <h3>呼吸工作坊</h3>
+          <p>透過有意識的呼吸模式，釋放身體儲存的壓力與情緒記憶，開啟自我療癒的本能。</p>
+          <ul>
+            <li>企業正念工作坊</li>
+            <li>個人壓力釋放</li>
+            <li>新月／滿月呼吸圈</li>
+          </ul>
+          <a href="#booking" class="service-card__link">預約工作坊 →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Runes Feature -->
+  <section class="runes-feature section" id="runes">
+    <div class="container">
+      <div class="runes-feature__inner">
+        <div class="runes-feature__text">
+          <p class="section__eyebrow">北歐盧恩的世界</p>
+          <h2 class="section__title">24 個古老符文<br />藏著你所有的答案</h2>
+          <p>Elder Futhark 是迄今最完整的北歐盧恩系統，由 24 個符文組成，每個符文都攜帶著宇宙的一個面向。Cora 親赴瑞典烏普薩拉——維京人最神聖的祭祀聖地——並在挪威跟隨傳承脈絡的盧恩師學習，這段旅程讓她的解讀深植於真實的土地記憶之中。</p>
+          <p>每次占卜都是一場與你的高我對話的儀式，盧恩不預測未來，它揭示<em>你內在已知的答案</em>。</p>
+          <a href="#booking" class="btn btn--primary">預約盧恩解讀</a>
+        </div>
+        <div class="runes-feature__symbols" aria-hidden="true">
+          <div class="rune-grid">
+            <span title="Fehu">ᚠ</span><span title="Uruz">ᚢ</span><span title="Thurisaz">ᚦ</span><span title="Ansuz">ᚨ</span>
+            <span title="Raidho">ᚱ</span><span title="Kenaz">ᚲ</span><span title="Gebo">ᚷ</span><span title="Wunjo">ᚹ</span>
+            <span title="Hagalaz">ᚺ</span><span title="Nauthiz">ᚾ</span><span title="Isa">ᛁ</span><span title="Jera">ᛃ</span>
+            <span title="Eihwaz">ᛇ</span><span title="Perthro">ᛈ</span><span title="Algiz">ᛉ</span><span title="Sowilo">ᛊ</span>
+            <span title="Tiwaz">ᛏ</span><span title="Berkano">ᛒ</span><span title="Ehwaz">ᛖ</span><span title="Mannaz">ᛗ</span>
+            <span title="Laguz">ᛚ</span><span title="Ingwaz">ᛜ</span><span title="Dagaz">ᛞ</span><span title="Othala">ᛟ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials section" id="testimonials">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__eyebrow">見證分享</p>
+        <h2 class="section__title">她們說</h2>
+      </div>
+      <div class="testimonials__grid">
+        <div class="testimonial-card">
+          <p class="testimonial-card__quote">「盧恩解讀那天，Cora 說了一句話讓我整個人靜下來：『你不是不知道答案，你只是不敢承認你知道。』後來那個決定，是我這幾年做得最對的事。」</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">Y</div>
+            <div>
+              <strong>Yolanda</strong>
+              <span>品牌行銷總監，台北</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-card__quote">「頌缽音療之後整個人像被重新啟動。我本來以為自己只是很累，沒想到身體其實在說話，只是我沒在聽。」</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">M</div>
+            <div>
+              <strong>Michelle</strong>
+              <span>科技業主管，新竹</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-card__quote">「Cora 的芳療諮詢不只是油的配方，她整個人散發的能量讓你在說話的過程就已經開始放鬆了。三個月後我的睡眠改善了七成。」</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">S</div>
+            <div>
+              <strong>Sophie</strong>
+              <span>外商業務經理，台中</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking CTA -->
+  <section class="booking section" id="booking">
+    <div class="booking__bg" aria-hidden="true">
+      <span>ᚨ</span><span>ᛊ</span><span>ᚹ</span><span>ᛏ</span><span>ᚠ</span><span>ᛟ</span>
+    </div>
+    <div class="container">
+      <div class="booking__inner">
+        <p class="section__eyebrow">開始你的旅程</p>
+        <h2 class="booking__title">準備好了嗎？</h2>
+        <p class="booking__subtitle">第一步不需要完美，只需要<em>一個意願</em>。</p>
+        <div class="booking__options">
+          <a href="https://instagram.com/holisticbycora" target="_blank" rel="noopener" class="booking__option">
+            <span class="booking__option-rune" aria-hidden="true">ᚹ</span>
+            <strong>Instagram 私訊</strong>
+            <span>@holisticbycora</span>
+          </a>
+        </div>
+        <p class="booking__note">首次免費 15 分鐘諮詢，讓我們先認識彼此。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <p class="footer__logo">Holistic by Cora</p>
+          <p>The deepest journey is inward.</p>
+          <div class="footer__runes" aria-hidden="true">ᚠ ᚨ ᛊ ᛏ ᛟ</div>
+        </div>
+        <div class="footer__links">
+          <h4>服務</h4>
+          <ul>
+            <li><a href="#services">北歐盧恩占卜</a></li>
+            <li><a href="#services">頌缽音療</a></li>
+            <li><a href="#services">靈氣 Reiki</a></li>
+            <li><a href="#services">芳香療法</a></li>
+            <li><a href="#services">塔羅解讀</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>關於</h4>
+          <ul>
+            <li><a href="#about">關於 Cora</a></li>
+            <li><a href="#runes">北歐盧恩</a></li>
+            <li><a href="#testimonials">見證分享</a></li>
+            <li><a href="#booking">預約諮詢</a></li>
+          </ul>
+        </div>
+        <div class="footer__social">
+          <h4>找到我</h4>
+          <a href="https://instagram.com/holisticbycora" target="_blank" rel="noopener">Instagram @holisticbycora</a>
+
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2025 Holistic by Cora · 台灣台北</p>
+        <p class="footer__rune-row" aria-hidden="true">ᚠᚢᚦᚨᚱᚲᚷᚹᚺᚾᛁᛃᛇᛈᛉᛊᛏᛒᛖᛗᛚᛜᛞᛟ</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
