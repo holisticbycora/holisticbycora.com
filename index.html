@@ -3,153 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holistic by Cora | Nordic Rune Sanctuary</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts: 神殿感字體組合 -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome 圖示 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Holistic by Cora | Nordic Runes & Healing</title>
+    <style>
+        /* 基礎網頁設定 */
+        body {
+            background-color: #F9F6F0; /* 溫柔的米白/蛋殼色背景 */
+            color: #2C2A29;            /* 深木炭色字體，比純黑更柔和 */
+            font-family: "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* 限制內容最大寬度，讓排版居中且好閱讀 */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 60px 24px;
+        }
+
+        /* 頂部導覽選單 */
+        nav {
+            margin-bottom: 60px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        nav ul li a {
+            color: #8C7853; /* 大地金色調 */
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #5C4D33;
+            text-decoration: underline;
+        }
+
+        /* 標題與標語區塊 */
+        header {
+            margin-bottom: 40px;
+        }
+        .brand-name {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #8C7853;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            line-height: 1.3;
+            margin: 0 0 20px 0;
+            color: #1A1A1A;
+        }
+        .services-tag {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .runes-symbols {
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            color: #8C7853;
+            margin-bottom: 20px;
+        }
+        .cta-link {
+            display: inline-block;
+            color: #8C7853;
+            text-decoration: none;
+            border-bottom: 1px solid #8C7853;
+            padding-bottom: 2px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .cta-link:hover {
+            color: #5C4D33;
+            border-bottom-color: #5C4D33;
+        }
+        .quote {
+            font-style: italic;
+            color: #555;
+            margin-top: 30px;
+            border-left: 2px solid #E0D9CD;
+            padding-left: 15px;
+        }
+
+        /* 服務項目區塊 */
+        .section {
+            margin-top: 60px;
+            border-top: 1px solid #E5DFD5;
+            padding-top: 40px;
+        }
+        .section-number {
+            font-size: 0.8rem;
+            color: #A09580;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin: 0 0 20px 0;
+            color: #1A1A1A;
+        }
+        .section p {
+            margin-bottom: 15px;
+            color: #4A4A4A;
+        }
+        .section .chinese-text {
+            color: #555;
+            font-size: 0.95rem;
+        }
+        .action-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #8C7853;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .action-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- 導航列 Navigation -->
-    <nav class="navbar">
-        <div class="nav-logo">
-            <span class="rune-icon">ᚱ</span> HOLISTIC BY CORA
-        </div>
-        <ul class="nav-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#runes">Rune Wisdom</a></li>
-            <li><a href="#reiki">Reiki Healing</a></li>
-            <li><a href="#sound">Sound Healing</a></li>
-            <li><a href="#journal">Sacred Journal</a></li>
-            <li><a href="#book" class="nav-btn">Book a Session</a></li>
-        </ul>
-    </nav>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Rune Wisdom</a></li>
+                <li><a href="#">Reiki Healing</a></li>
+                <li><a href="#">Sound Healing</a></li>
+                <li><a href="#">Sacred Journal</a></li>
+                <li><a href="#">Book a Session</a></li>
+            </ul>
+        </nav>
 
-    <!-- Hero 頂級視覺區塊 -->
-    <section id="hero" class="hero-section">
-        <div class="aurora-glow"></div>
-        <div class="hero-content">
-            <div class="hero-brand">HOLISTIC BY CORA</div>
-            <h1 class="hero-title">Ancient Wisdom<br><span class="serif-italic">for</span> Modern Souls</h1>
-            <p class="hero-subtitle">Rune Reading • Reiki Healing • Sound Therapy • Meditation</p>
-            <div class="hero-rune-sigil">ᛟ  ᚱ  ᚷ</div>
-            <a href="#runes" class="cta-button">Enter the Sanctuary</a>
-        </div>
-    </section>
-
-    <!-- 核心定位特寫 Brand Statement -->
-    <section class="statement-section">
-        <div class="container">
-            <p class="statement-text">
+        <header>
+            <div class="brand-name">HOLISTIC BY CORA</div>
+            <h1>Ancient Wisdom<br>for Modern Souls</h1>
+            <div class="services-tag">Rune Reading • Reiki Healing • Sound Therapy • Meditation</div>
+            <div class="runes-symbols">ᚾ ᚱ ᛟ</div>
+            <div>
+                <a href="#" class="cta-link">Enter the Sanctuary</a>
+            </div>
+            <div class="quote">
                 "Guiding souls through the wisdom of runes, energy work, and conscious transformation."
-            </p>
-            <div class="divider-line"></div>
-        </div>
-    </section>
+            </div>
+        </header>
 
-    <!-- 第一層：盧恩符文占卜 Rune Wisdom -->
-    <section id="runes" class="service-section">
-        <div class="container grid-container">
-            <div class="service-image img-runes">
-                <!-- 可在此處加入極光深林或盧恩符文暗色系意境照 -->
-                <div class="image-overlay-glow"></div>
-            </div>
-            <div class="service-info">
-                <span class="service-tag">01 / DIVINATION</span>
-                <h2 class="section-heading">Rune Wisdom</h2>
-                <p class="section-desc-en">Decoding the ancient Norse symbols to illuminate your current alignment, career transition, and soul path.</p>
-                <p class="section-desc-zh">透過古老北歐盧恩符文的低語，映照出你靈魂深處的轉折與生命藍圖，為現代迷惘帶來精準而深邃的指引。</p>
-                <a href="#book" class="explore-link">Request a Reading <span class="arrow">→</span></a>
-            </div>
+        <div class="section">
+            <div class="section-number">01 / DIVINATION</div>
+            <h2>Rune Wisdom</h2>
+            <p>Decoding the ancient Norse symbols to illuminate your current alignment, career transition, and soul path.</p>
+            <p class="chinese-text">透過古老北歐盧恩符文的低語，映照出你靈魂深處的轉折與生命藍圖，為現代迷惘帶來精準而深遠的指引。</p>
+            <a href="#" class="action-link">Request a Reading →</a>
         </div>
-    </section>
 
-    <!-- 第二層：靈氣療癒 Reiki Healing -->
-    <section id="reiki" class="service-section item-reverse">
-        <div class="container grid-container">
-            <div class="service-info">
-                <span class="service-tag">02 / ENERGY WORK</span>
-                <h2 class="section-heading">Reiki Energy Healing</h2>
-                <p class="section-desc-en">Channeling Holy Fire® and Usui Reiki to clear energetic blockages and restore your sovereign vitality.</p>
-                <p class="section-desc-zh">承接宇宙高頻光能，高階靈氣調理能溫柔且強大地梳理脈輪與能量場，釋放身體與情感的深層阻塞。</p>
-                <a href="#book" class="explore-link">Experience Reiki <span class="arrow">→</span></a>
-            </div>
-            <div class="service-image img-reiki">
-                <div class="image-overlay-glow"></div>
-            </div>
+        <div class="section">
+            <div class="section-number">02 / ENERGY WORK</div>
+            <h2>Reiki Energy Healing</h2>
+            <p>Channeling Holy Fire® and Usui Reiki to clear energetic blockages and restore your sovereign vitality.</p>
+            <p class="chinese-text">承接宇宙高頻光能，高階靈氣調理能溫柔且強大地梳理脈輪與能量場，釋放身體與情感的深層阻塞。</p>
+            <a href="#" class="action-link">Experience Reiki →</a>
         </div>
-    </section>
 
-    <!-- 第三層：頌缽聲療 Sound Healing -->
-    <section id="sound" class="service-section">
-        <div class="container grid-container">
-            <div class="service-image img-sound">
-                <!-- 即使是頌缽，這裡的視覺也維持暗調深綠與金色，拒絕明亮Spa風 -->
-                <div class="image-overlay-glow"></div>
+        <div class="section">
+            <div class="section-number">03 / FREQUENCY</div>
+            <h2>Sound Therapy</h2>
             </div>
-            <div class="service-info">
-                <span class="service-tag">03 / FREQUENCY</span>
-                <h2 class="section-heading">Sound Therapy</h2>
-                <p class="section-desc-en">Vibrational alignment through Himalayan singing bowls to recalibrate your nervous system into deep stillness.</p>
-                <p class="section-desc-zh">讓源自喜馬拉雅的頌缽共鳴穿透細胞，在深沉的頻率震盪中，帶領緊繃的現代神經系統回歸最初的宇宙寂靜。</p>
-                <a href="#book" class="explore-link">Listen to Frequency <span class="arrow">→</span></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 部落格入口：Sacred Journal -->
-    <section id="journal" class="journal-section">
-        <div class="container">
-            <div class="journal-header">
-                <h2 class="section-heading centered">Sacred Journal</h2>
-                <p class="sub-heading-centered">北歐神話、盧恩教學、靈氣與精油的能量日誌</p>
-            </div>
-            <div class="journal-grid">
-                <article class="journal-card">
-                    <div class="card-bg-glow"></div>
-                    <span class="card-category">Rune Wisdom</span>
-                    <h3>ᚠ 豐饒之根：如何在現代生活中調頻豐盛能量</h3>
-                    <p>解讀盧恩首個符文 Fehu 的古老奧祕與金錢能量錨定...</p>
-                    <a href="#" class="read-more">Read Journal →</a>
-                </article>
-                <article class="journal-card">
-                    <div class="card-bg-glow"></div>
-                    <span class="card-category">Norse Myth</span>
-                    <h3>世界之樹 Yggdrasil 的九個維度與心靈轉化</h3>
-                    <p>探索北歐薩滿信仰中，內在英雄旅程的宇宙觀結構...</p>
-                    <a href="#" class="read-more">Read Journal →</a>
-                </article>
-                <article class="journal-card">
-                    <div class="card-bg-glow"></div>
-                    <span class="card-category">Reiki Diary</span>
-                    <h3>聖火靈氣與水晶療癒的日常淨化結界建立</h3>
-                    <p>如何利用捷克隕石與雷姆尼亞水晶協同靈氣保護個人氣場...</p>
-                    <a href="#" class="read-more">Read Journal →</a>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- 預約區塊 Book a Session -->
-    <section id="book" class="booking-section">
-        <div class="container booking-container">
-            <h2 class="booking-title">Begin Your Sovereignty Journey</h2>
-            <p class="booking-subtitle">走進北歐森林神殿，開啟你的神聖轉化儀式。</p>
-            <div class="rune-divider">ᛟ</div>
-            <p class="booking-meta">目前開放：盧恩個案占卜 | 聖火靈氣遠距/實體調理 | 頌缽音療</p>
-            <a href="mailto:your-email@example.com" class="booking-btn">Book an Alignment</a>
-        </div>
-    </section>
-
-    <!-- 頁尾 Footer -->
-    <footer>
-        <div class="container footer-content">
-            <p>&copy; 2026 Holistic by Cora. All Rights Reserved. Crafted with Ancient Wisdom.</p>
-            <div class="footer-runes">ᚠ ᚢ th ᚨ ᚱ ᚲ ᚷ ᚹ</div>
-        </div>
-    </footer>
+    </div>
 
 </body>
 </html>
